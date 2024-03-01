@@ -37,7 +37,7 @@ jobs:
         if: env.YEAR == ''
       - name: notion heatmap
         run: |
-          github_heatmap notion  --notion_token "${{secrets.NOTION_TOKEN}}" --database_id "${{ env.DATABASE_ID }}" --date_prop_name "日期" --value_prop_name "读过" --unit "本" --year $YEAR  --me "${{secrets.BOOK_NAME}}" --without-type-name --with-animation --background-color=${{ vars.background_color||'#FFFFFF'}} --track-color=${{ vars.track_color||'#b3cde3'}} --special-color1=${{ vars.special_color||'#8c96c6'}} --special-color2=${{ vars.special_color2||'#88419d'}} --dom-color=${{ vars.dom_color||'#edf8fb'}} --text-color=${{ vars.text_color||'#000000'}}
+          github_heatmap notion  --notion_token "${{secrets.NOTION_TOKEN}}" --database_id "${{ env.DATABASE_ID }}" --date_prop_name "日期" --value_prop_name "读过" --unit "本" --year $YEAR  --me "${{secrets.BOOK_NAME}}" --without-type-name --background-color=${{ vars.background_color||'#FFFFFF'}} --track-color=${{ vars.track_color||'#b3cde3'}} --special-color1=${{ vars.special_color||'#8c96c6'}} --special-color2=${{ vars.special_color2||'#88419d'}} --dom-color=${{ vars.dom_color||'#edf8fb'}} --text-color=${{ vars.text_color||'#000000'}}
       - name: Rename notion.svg to a random name
         run: |
             RANDOM_FILENAME=$(uuidgen).svg
